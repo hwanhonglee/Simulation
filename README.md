@@ -8,6 +8,7 @@ ENV:\
 
 - Autoware Universe: Galactic
 - CARLA Simulator: 0.9.13
-  -> If you want to modify or create CARLA maps, you need Source Code CARLA
+  -> If you want to modify or create CARLA maps, you need Source Code CARLA \ That File Download https://github.com/carla-simulator/carla/releases/tag/0.9.13 or SSD 
+  
 - Unreal_Engine: 4.26
 
