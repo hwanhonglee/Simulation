@@ -1,6 +1,6 @@
 # Autoware Universe - CARLA Simulator
 
-ENV:
+ENV:\
   Ubuntu 20.04
   ROS2: Galactic
   Nvidia Driver Version: 565.57.01 
