@@ -1,0 +1,13 @@
+<launch>
+  <arg name="image_raw0" default="/image_raw0"/>
+  <arg name="gpu_id_image_raw0" default="0"/>
+  <arg name="image_number" default="1"/>
+  <arg name="output_topic" default="rois"/>
+
+  <include if="$(eval &quot;'$(var image_number)'>='1'&quot;)" file="$(find-pkg-share tensorrt_yolo)/launch/tensorrt_yolo.launch.xml">
+    <arg name="input_topic" value="$(var image_raw0)"/>
+    <arg name="output_topic" value="rois0"/>
+    <arg name="gpu_id" value="$(var gpu_id_image_raw0)"/>
+  </include>
+
+</launch>

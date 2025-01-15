@@ -1,0 +1,44 @@
+sensor_kit_base_link: 
+  camera0/camera_link: 
+    x: 0.7 
+    y: 0.0 
+    z: 0.0 
+    roll: 0.0 
+    pitch: 0.0 
+    yaw: 0.0   
+  traffic_light_right_camera/camera_link: 
+    x: 0.0 
+    y: 0.0 
+    z: 0.0 
+    roll: 0.0 
+    pitch: 0.0 
+    yaw: 0.0 
+  traffic_light_left_camera/camera_link: 
+    x: 0.0 
+    y: 0.0 
+    z: 0.0 
+    roll: 0.0 
+    pitch: 0.0 
+    yaw: 0.0 
+  velodyne_base_link: 
+    x: 0.0 
+    y: 0.0 
+    z: 0.8 
+    roll: 0.0 
+    pitch: 0.0 
+    yaw: 0.0 
+  gnss_link: 
+    x: 0.0 
+    y: 0.0 
+    z: 0.8 
+    roll: 0.0 
+    pitch: 0.0 
+    yaw: 0.0 
+  tamagawa/imu_link:
+    x: 0.0 
+    y: 0.0 
+    z: 0.8 
+    roll: 0.0 
+    pitch: 0.0 
+    yaw: 0.0
+    # <!-- HH_230831 -->
