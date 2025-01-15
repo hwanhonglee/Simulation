@@ -120,7 +120,8 @@ class WorldHandler(object):
                 else:
                     _randomize = True                
             
-                CarlaDataProvider.request_new_actor('vehicle.toyota.prius', spawn_point, self._agent_role_name, random_location=_randomize)            
+            # HH_231106 차량 변경 
+                CarlaDataProvider.request_new_actor('vehicle.toyota.prius', spawn_point, self._agent_role_name, random_location=_randomize)              
         else:
             print("Can't Load CARLA .. make sure that Simulator is running !!")  
 

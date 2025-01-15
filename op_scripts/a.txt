@@ -1,0 +1,681 @@
+-------------------------------
+Starting OpenPlanner .. 
+hero
+C_track_1_0_7
+true
+
+-------------------------------
+[INFO] [launch]: All log files can be found below /home/a/.ros/log/2024-11-06-18-19-38-611475-a-64443
+[INFO] [launch]: Default logging verbosity is set to INFO
+[WARNING] [launch_ros.actions.node]: Parameter file path is not a file: /home/a/carla-autoware-universe/autoware/install/lidar_centerpoint/share/lidar_centerpoint/config/centerpoint_tiny.param.yaml
+[WARNING] [launch_ros.actions.node]: Parameter file path is not a file: /home/a/carla-autoware-universe/autoware/install/lidar_centerpoint/share/lidar_centerpoint/config/detection_class_remapper.param.yaml
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/mrm_emergency_stop_operator' in container '/system/mrm_emergency_stop_operator/mrm_emergency_stop_operator_container'
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/system_monitor/cpu_monitor' in container '/system/system_monitor/system_monitor/system_monitor_container'
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/system_monitor/hdd_monitor' in container '/system/system_monitor/system_monitor/system_monitor_container'
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/system_monitor/mem_monitor' in container '/system/system_monitor/system_monitor/system_monitor_container'
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/component_state_monitor/component' in container '/system/component_state_monitor/container'
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/system_monitor/net_monitor' in container '/system/system_monitor/system_monitor/system_monitor_container'
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/system_monitor/ntp_monitor' in container '/system/system_monitor/system_monitor/system_monitor_container'
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/system_monitor/process_monitor' in container '/system/system_monitor/system_monitor/system_monitor_container'
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/system_monitor/gpu_monitor' in container '/system/system_monitor/system_monitor/system_monitor_container'
+[INFO] [carla_pointcloud_node-1]: process started with pid [64467]
+[INFO] [component_container_mt-2]: process started with pid [64469]
+[INFO] [robot_state_publisher-3]: process started with pid [64471]
+[INFO] [component_container_mt-4]: process started with pid [64473]
+[INFO] [component_container-5]: process started with pid [64475]
+[INFO] [topic_state_monitor_node-6]: process started with pid [64477]
+[INFO] [topic_state_monitor_node-7]: process started with pid [64479]
+[INFO] [topic_state_monitor_node-8]: process started with pid [64481]
+[INFO] [topic_state_monitor_node-9]: process started with pid [64483]
+[INFO] [topic_state_monitor_node-10]: process started with pid [64485]
+[INFO] [topic_state_monitor_node-11]: process started with pid [64487]
+[INFO] [topic_state_monitor_node-12]: process started with pid [64489]
+[INFO] [topic_state_monitor_node-13]: process started with pid [64491]
+[INFO] [topic_state_monitor_node-14]: process started with pid [64493]
+[INFO] [topic_state_monitor_node-15]: process started with pid [64495]
+[INFO] [topic_state_monitor_node-16]: process started with pid [64497]
+[INFO] [topic_state_monitor_node-17]: process started with pid [64499]
+[INFO] [topic_state_monitor_node-18]: process started with pid [64501]
+[INFO] [topic_state_monitor_node-19]: process started with pid [64503]
+[INFO] [aggregator_node-20]: process started with pid [64505]
+[INFO] [system_error_monitor-21]: process started with pid [64507]
+[INFO] [emergency_handler-22]: process started with pid [64509]
+[INFO] [component_container-23]: process started with pid [64608]
+[INFO] [component_container-24]: process started with pid [64619]
+[INFO] [component_container-25]: process started with pid [64623]
+[INFO] [map_hash_generator-26]: process started with pid [64713]
+[INFO] [relay-27]: process started with pid [64790]
+[INFO] [relay-28]: process started with pid [64793]
+[INFO] [tag_serial_driver-29]: process started with pid [64827]
+[INFO] [imu_corrector-30]: process started with pid [64829]
+[INFO] [gnss_poser-31]: process started with pid [64831]
+[INFO] [vehicle_velocity_converter-32]: process started with pid [64833]
+[INFO] [map_height_fitter-33]: process started with pid [64871]
+[INFO] [pose_initializer_node-34]: process started with pid [64873]
+[INFO] [automatic_pose_initializer-35]: process started with pid [64875]
+[INFO] [ndt_scan_matcher-36]: process started with pid [64877]
+[INFO] [gyro_odometer-37]: process started with pid [64881]
+[INFO] [ekf_localizer-38]: process started with pid [64883]
+[INFO] [stop_filter-39]: process started with pid [64885]
+[INFO] [twist2accel-40]: process started with pid [64887]
+[INFO] [localization_error_monitor-41]: process started with pid [64889]
+[INFO] [component_container-42]: process started with pid [64891]
+[INFO] [shape_estimation-43]: process started with pid [64894]
+[INFO] [detected_object_feature_remover-44]: process started with pid [64896]
+[INFO] [roi_cluster_fusion_node-45]: process started with pid [64898]
+[INFO] [shape_estimation-46]: process started with pid [64900]
+[INFO] [detected_object_feature_remover-47]: process started with pid [64902]
+[INFO] [object_range_splitter_node-48]: process started with pid [64904]
+[INFO] [detection_by_tracker-49]: process started with pid [64908]
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/system_monitor/voltage_monitor' in container '/system/system_monitor/system_monitor/system_monitor_container'
+[carla_pointcloud_node-1] [31m[ERROR 1730884781.019851565] [pcl_ros]: "base_link" passed to lookupTransform argument target_frame does not exist.  (transformPointCloud() at /tmp/binarydeb/ros-galactic-pcl-ros-2.3.2/src/transforms.cpp:79)[0m
+[component_container_mt-2] [0m[INFO 1730884781.019775934] [pointcloud_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/pointcloud_preprocessor/lib/libpointcloud_preprocessor_filter.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[robot_state_publisher-3] Link sensor_kit_base_link had 6 children
+[robot_state_publisher-3] Link camera0/camera_link had 1 children
+[robot_state_publisher-3] Link camera0/camera_optical_link had 0 children
+[robot_state_publisher-3] Link gnss_link had 0 children
+[robot_state_publisher-3] Link tamagawa/imu_link had 0 children
+[robot_state_publisher-3] Link traffic_light_left_camera/camera_link had 1 children
+[robot_state_publisher-3] Link traffic_light_left_camera/camera_optical_link had 0 children
+[robot_state_publisher-3] Link traffic_light_right_camera/camera_link had 1 children
+[robot_state_publisher-3] Link traffic_light_right_camera/camera_optical_link had 0 children
+[robot_state_publisher-3] Link velodyne_base_link had 1 children
+[robot_state_publisher-3] Link velodyne had 0 children
+[robot_state_publisher-3] [0m[INFO 1730884780.992394144] [robot_state_publisher]: got segment base_link (setupURDF() at /tmp/binarydeb/ros-galactic-robot-state-publisher-2.5.3/src/robot_state_publisher.cpp:190)[0m
+[robot_state_publisher-3] [0m[INFO 1730884780.992442379] [robot_state_publisher]: got segment camera0/camera_link (setupURDF() at /tmp/binarydeb/ros-galactic-robot-state-publisher-2.5.3/src/robot_state_publisher.cpp:190)[0m
+[robot_state_publisher-3] [0m[INFO 1730884780.992450479] [robot_state_publisher]: got segment camera0/camera_optical_link (setupURDF() at /tmp/binarydeb/ros-galactic-robot-state-publisher-2.5.3/src/robot_state_publisher.cpp:190)[0m
+[robot_state_publisher-3] [0m[INFO 1730884780.992455350] [robot_state_publisher]: got segment gnss_link (setupURDF() at /tmp/binarydeb/ros-galactic-robot-state-publisher-2.5.3/src/robot_state_publisher.cpp:190)[0m
+[robot_state_publisher-3] [0m[INFO 1730884780.992460210] [robot_state_publisher]: got segment sensor_kit_base_link (setupURDF() at /tmp/binarydeb/ros-galactic-robot-state-publisher-2.5.3/src/robot_state_publisher.cpp:190)[0m
+[robot_state_publisher-3] [0m[INFO 1730884780.992464907] [robot_state_publisher]: got segment tamagawa/imu_link (setupURDF() at /tmp/binarydeb/ros-galactic-robot-state-publisher-2.5.3/src/robot_state_publisher.cpp:190)[0m
+[robot_state_publisher-3] [0m[INFO 1730884780.992469357] [robot_state_publisher]: got segment traffic_light_left_camera/camera_link (setupURDF() at /tmp/binarydeb/ros-galactic-robot-state-publisher-2.5.3/src/robot_state_publisher.cpp:190)[0m
+[robot_state_publisher-3] [0m[INFO 1730884780.992474138] [robot_state_publisher]: got segment traffic_light_left_camera/camera_optical_link (setupURDF() at /tmp/binarydeb/ros-galactic-robot-state-publisher-2.5.3/src/robot_state_publisher.cpp:190)[0m
+[robot_state_publisher-3] [0m[INFO 1730884780.992478812] [robot_state_publisher]: got segment traffic_light_right_camera/camera_link (setupURDF() at /tmp/binarydeb/ros-galactic-robot-state-publisher-2.5.3/src/robot_state_publisher.cpp:190)[0m
+[robot_state_publisher-3] [0m[INFO 1730884780.992483147] [robot_state_publisher]: got segment traffic_light_right_camera/camera_optical_link (setupURDF() at /tmp/binarydeb/ros-galactic-robot-state-publisher-2.5.3/src/robot_state_publisher.cpp:190)[0m
+[robot_state_publisher-3] [0m[INFO 1730884780.992487401] [robot_state_publisher]: got segment velodyne (setupURDF() at /tmp/binarydeb/ros-galactic-robot-state-publisher-2.5.3/src/robot_state_publisher.cpp:190)[0m
+[robot_state_publisher-3] [0m[INFO 1730884780.992492125] [robot_state_publisher]: got segment velodyne_base_link (setupURDF() at /tmp/binarydeb/ros-galactic-robot-state-publisher-2.5.3/src/robot_state_publisher.cpp:190)[0m
+[component_container_mt-4] [0m[INFO 1730884781.020555980] [system.system_monitor.system_monitor.system_monitor_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/system_monitor/lib/libcpu_monitor_lib.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container_mt-4] [0m[INFO 1730884781.022309853] [system.system_monitor.system_monitor.system_monitor_container]: Found class: rclcpp_components::NodeFactoryTemplate<CPUMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-4] [0m[INFO 1730884781.022330027] [system.system_monitor.system_monitor.system_monitor_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<CPUMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container_mt-4] [0m[INFO 1730884781.039019458] [system.system_monitor.system_monitor.system_monitor_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/system_monitor/lib/libhdd_monitor_lib.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container_mt-4] [0m[INFO 1730884781.039699790] [system.system_monitor.system_monitor.system_monitor_container]: Found class: rclcpp_components::NodeFactoryTemplate<HddMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-4] [0m[INFO 1730884781.039716530] [system.system_monitor.system_monitor.system_monitor_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<HddMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container_mt-4] [0m[INFO 1730884781.061377832] [system.system_monitor.system_monitor.system_monitor_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/system_monitor/lib/libmem_monitor_lib.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container_mt-4] [0m[INFO 1730884781.061726860] [system.system_monitor.system_monitor.system_monitor_container]: Found class: rclcpp_components::NodeFactoryTemplate<MemMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-4] [0m[INFO 1730884781.061742259] [system.system_monitor.system_monitor.system_monitor_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<MemMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container_mt-4] [0m[INFO 1730884781.066984253] [system.system_monitor.system_monitor.system_monitor_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/system_monitor/lib/libnet_monitor_lib.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container_mt-4] [0m[INFO 1730884781.067860582] [system.system_monitor.system_monitor.system_monitor_container]: Found class: rclcpp_components::NodeFactoryTemplate<NetMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-4] [0m[INFO 1730884781.067883330] [system.system_monitor.system_monitor.system_monitor_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<NetMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container_mt-4] [0m[INFO 1730884781.077446190] [system.system_monitor.system_monitor.system_monitor_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/system_monitor/lib/libntp_monitor_lib.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container_mt-4] [0m[INFO 1730884781.077820593] [system.system_monitor.system_monitor.system_monitor_container]: Found class: rclcpp_components::NodeFactoryTemplate<NTPMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-4] [0m[INFO 1730884781.077838030] [system.system_monitor.system_monitor.system_monitor_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<NTPMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container_mt-4] [0m[INFO 1730884781.083302248] [system.system_monitor.system_monitor.system_monitor_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/system_monitor/lib/libprocess_monitor_lib.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container_mt-4] [0m[INFO 1730884781.083631728] [system.system_monitor.system_monitor.system_monitor_container]: Found class: rclcpp_components::NodeFactoryTemplate<ProcessMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-4] [0m[INFO 1730884781.083643817] [system.system_monitor.system_monitor.system_monitor_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<ProcessMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container_mt-4] [0m[INFO 1730884781.101161449] [system.system_monitor.system_monitor.system_monitor_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/system_monitor/lib/libgpu_monitor_lib.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container_mt-4] [0m[INFO 1730884781.101433666] [system.system_monitor.system_monitor.system_monitor_container]: Found class: rclcpp_components::NodeFactoryTemplate<GPUMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-4] [0m[INFO 1730884781.101449734] [system.system_monitor.system_monitor.system_monitor_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<GPUMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container-5] [0m[INFO 1730884781.059338199] [system.component_state_monitor.container]: Load Library: /home/a/carla-autoware-universe/autoware/install/component_state_monitor/lib/libcomponent_state_monitor.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container-5] [0m[INFO 1730884781.060346282] [system.component_state_monitor.container]: Found class: rclcpp_components::NodeFactoryTemplate<component_state_monitor::StateMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-5] [0m[INFO 1730884781.060368950] [system.component_state_monitor.container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<component_state_monitor::StateMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[system_error_monitor-21] [33m[WARN 1730884781.094114579] [system.system_error_monitor]: waiting for diag_array msg... (isDataReady() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/system/system_error_monitor/src/system_error_monitor_core.cpp:402)[0m
+[component_container-24] [0m[INFO 1730884781.020858528] [system.mrm_emergency_stop_operator.mrm_emergency_stop_operator_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/mrm_emergency_stop_operator/lib/libmrm_emergency_stop_operator_component.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container-24] [0m[INFO 1730884781.021566035] [system.mrm_emergency_stop_operator.mrm_emergency_stop_operator_container]: Found class: rclcpp_components::NodeFactoryTemplate<mrm_emergency_stop_operator::MrmEmergencyStopOperator> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-24] [0m[INFO 1730884781.021583158] [system.mrm_emergency_stop_operator.mrm_emergency_stop_operator_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<mrm_emergency_stop_operator::MrmEmergencyStopOperator> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container-25] [0m[INFO 1730884781.068006447] [map.map_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/map_loader/lib/liblanelet2_map_loader_node.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container-25] [0m[INFO 1730884781.082430533] [map.map_container]: Found class: rclcpp_components::NodeFactoryTemplate<Lanelet2MapLoaderNode> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-25] [0m[INFO 1730884781.082462747] [map.map_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<Lanelet2MapLoaderNode> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[tag_serial_driver-29] terminate called after throwing an instance of 'boost::wrapexcept<boost::system::system_error>'
+[tag_serial_driver-29]   what():  open: No such file or directory
+[ekf_localizer-38] [33m[WARN 1730884781.083563043] [localization.pose_twist_fusion_filter.ekf_localizer]: The node is not activated. Provide initial pose to pose_initializer (warnThrottle() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/localization/ekf_localizer/include/ekf_localizer/warning.hpp:34)[0m
+[shape_estimation-43] [0m[INFO 1730884781.070472108] [perception.object_recognition.detection.clustering.shape_estimation]: using boost shape estimation : 0 (ShapeEstimationNode() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/perception/shape_estimation/src/node.cpp:50)[0m
+[emergency_handler-22] [0m[INFO 1730884781.104553707] [system.emergency_handler]: waiting for hazard_status_stamped msg... (isDataReady() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/system/emergency_handler/src/emergency_handler/emergency_handler_core.cpp:280)[0m
+[component_container_mt-4] [0m[INFO 1730884781.108501442] [system.system_monitor.system_monitor.system_monitor_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/system_monitor/lib/libvoltage_monitor_lib.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container_mt-4] [0m[INFO 1730884781.108915111] [system.system_monitor.system_monitor.system_monitor_container]: Found class: rclcpp_components::NodeFactoryTemplate<VoltageMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-4] [0m[INFO 1730884781.108936750] [system.system_monitor.system_monitor.system_monitor_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<VoltageMonitor> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[shape_estimation-46] [0m[INFO 1730884781.110214809] [perception.object_recognition.detection.clustering.camera_lidar_fusion.shape_estimation]: using boost shape estimation : 0 (ShapeEstimationNode() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/perception/shape_estimation/src/node.cpp:50)[0m
+[ndt_scan_matcher-36] [0m[INFO 1730884781.111694848] [localization.pose_estimator.ndt_scan_matcher]: points_queue_size: 1 (NDTScanMatcher() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/localization/ndt_scan_matcher/src/ndt_scan_matcher_core.cpp:103)[0m
+[ndt_scan_matcher-36] [0m[INFO 1730884781.111768717] [localization.pose_estimator.ndt_scan_matcher]: base_frame_id: base_link (NDTScanMatcher() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/localization/ndt_scan_matcher/src/ndt_scan_matcher_core.cpp:106)[0m
+[ndt_scan_matcher-36] [0m[INFO 1730884781.111782669] [localization.pose_estimator.ndt_scan_matcher]: ndt_base_frame_id: ndt_base_link (NDTScanMatcher() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/localization/ndt_scan_matcher/src/ndt_scan_matcher_core.cpp:109)[0m
+[ndt_scan_matcher-36] [0m[INFO 1730884781.111832353] [localization.pose_estimator.ndt_scan_matcher]: trans_epsilon: 0.030000, step_size: 0.300000, resolution: 2.300000, max_iterations: 30 (NDTScanMatcher() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/localization/ndt_scan_matcher/src/ndt_scan_matcher_core.cpp:124)[0m
+[component_container-25] Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[gyro_odometer-37] [33m[WARN 1730884781.149866350] [localization.twist_estimator.gyro_odometer]: Imu msg is not subscribed (callbackTwistWithCovariance() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/localization/gyro_odometer/src/gyro_odometer_core.cpp:61)[0m
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-25] You may want to use different projector.Projected MGRS Grid changed from last projection. Projected pointmight be far away from previously projected point.
+[component_container-42] [0m[INFO 1730884781.165963547] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/pointcloud_preprocessor/lib/libpointcloud_preprocessor_filter.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[ERROR] [tag_serial_driver-29]: process has died [pid 64827, exit code -6, cmd '/home/a/carla-autoware-universe/autoware/install/tamagawa_imu_driver/lib/tamagawa_imu_driver/tag_serial_driver --ros-args -r __node:=tag_serial_driver -r __ns:=/sensing/imu/tamagawa --params-file /tmp/launch_params_q9wwrrn5 --params-file /tmp/launch_params_2rt_je6s --params-file /tmp/launch_params_p4pss1sq -r imu/data_raw:=imu_raw'].
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/map/lanelet2_map_loader' in container '/map/map_container'
+[component_container-25] You may want to use different projector.[0m[INFO 1730884781.195798337] [map.map_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/map_loader/lib/liblanelet2_map_visualization_node.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container-25] [0m[INFO 1730884781.196396478] [map.map_container]: Found class: rclcpp_components::NodeFactoryTemplate<Lanelet2MapVisualizationNode> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-25] [0m[INFO 1730884781.196410706] [map.map_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<Lanelet2MapVisualizationNode> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/map/lanelet2_map_visualization' in container '/map/map_container'
+[component_container-25] [0m[INFO 1730884781.221428437] [map.lanelet2_map_visualization]: Map is loaded
+[component_container-25]  (onMapBin() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/map/map_loader/src/lanelet2_map_loader/lanelet2_map_visualization_node.cpp:90)[0m
+[component_container-23] [0m[INFO 1730884781.223297594] [system.mrm_comfortable_stop_operator.mrm_comfortable_stop_operator_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/mrm_comfortable_stop_operator/lib/libmrm_comfortable_stop_operator_component.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container-23] [0m[INFO 1730884781.224025916] [system.mrm_comfortable_stop_operator.mrm_comfortable_stop_operator_container]: Found class: rclcpp_components::NodeFactoryTemplate<mrm_comfortable_stop_operator::MrmComfortableStopOperator> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-23] [0m[INFO 1730884781.224043592] [system.mrm_comfortable_stop_operator.mrm_comfortable_stop_operator_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<mrm_comfortable_stop_operator::MrmComfortableStopOperator> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/mrm_comfortable_stop_operator' in container '/system/mrm_comfortable_stop_operator/mrm_comfortable_stop_operator_container'
+[roi_cluster_fusion_node-45] [33m[WARN 1730884781.250746933] [perception.object_recognition.detection.clustering.camera_lidar_fusion.roi_cluster_fusion]: minimum rois_number is 1. current rois_number is 0 (FusionNode() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/perception/image_projection_based_fusion/src/fusion_node.cpp:49)[0m
+[roi_cluster_fusion_node-45] terminate called after throwing an instance of 'std::runtime_error'
+[roi_cluster_fusion_node-45]   what():  The number of offsets does not match the number of topics.
+[component_container-25] [0m[INFO 1730884781.252033179] [map.map_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/map_loader/lib/libpointcloud_map_loader_node.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container-25] [0m[INFO 1730884781.265628021] [map.map_container]: Found class: rclcpp_components::NodeFactoryTemplate<PointCloudMapLoaderNode> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-25] [0m[INFO 1730884781.265663169] [map.map_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<PointCloudMapLoaderNode> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container-25] [0m[INFO 1730884781.271723623] [map.pointcloud_map_loader]: Load /home/a/Downloads/sample-planning-map/pointcloud_map.pcd (1 out of 1) (loadPCDFiles() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/map/map_loader/src/pointcloud_map_loader/pointcloud_map_loader_module.cpp:53)[0m
+[system_error_monitor-21] [0m[INFO 1730884781.294084072] [system.system_error_monitor]: waiting for current_gate_mode msg... (isDataReady() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/system/system_error_monitor/src/system_error_monitor_core.cpp:407)[0m
+[component_container_mt-2] [0m[INFO 1730884781.323647902] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::ApproximateDownsampleFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.324215312] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::BlockageDiagComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.324487718] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::CropBoxFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.324724045] [pointcloud_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::CropBoxFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container_mt-2] [0m[INFO 1730884781.337966965] [perception.obstacle_segmentation.crop_box_filter]: Filter (as Component) successfully created with the following parameters:
+[component_container_mt-2]  - approximate_sync : false
+[component_container_mt-2]  - use_indices      : false
+[component_container_mt-2]  - latched_indices  : false
+[component_container_mt-2]  - max_queue_size   : 5 (Filter() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/sensing/pointcloud_preprocessor/src/filter.cpp:79)[0m
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/perception/obstacle_segmentation/crop_box_filter' in container 'pointcloud_container'
+[component_container_mt-2] [0m[INFO 1730884781.348204248] [pointcloud_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/probabilistic_occupancy_grid_map/lib/libpointcloud_based_occupancy_grid_map.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[ERROR] [roi_cluster_fusion_node-45]: process has died [pid 64898, exit code -6, cmd '/home/a/carla-autoware-universe/autoware/install/image_projection_based_fusion/lib/image_projection_based_fusion/roi_cluster_fusion_node --ros-args -r __node:=roi_cluster_fusion -r __ns:=/perception/object_recognition/detection/clustering/camera_lidar_fusion --params-file /tmp/launch_params_olvq221m --params-file /tmp/launch_params_b8ijczqk --params-file /tmp/launch_params_2yh7l4nq --params-file /tmp/launch_params_vcmn70uj --params-file /tmp/launch_params_yu2_ushu --params-file /tmp/launch_params_pfsbeqs7 --params-file /home/a/carla-autoware-universe/autoware/install/image_projection_based_fusion/share/image_projection_based_fusion/config/roi_sync.param.yaml --params-file /tmp/launch_params_6fn64d1y --params-file /tmp/launch_params_c52eopf3 --params-file /tmp/launch_params_i5sywlvd --params-file /tmp/launch_params_ugoc8wjs --params-file /tmp/launch_params_n204rzyk --params-file /tmp/launch_params_sdzax0_b --params-file /tmp/launch_params_hbm54hij --params-file /tmp/launch_params_6zvk17wh -r input:=/perception/object_recognition/detection/clustering/clusters -r output:=clusters'].
+[component_container_mt-2] [0m[INFO 1730884781.353228354] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<occupancy_grid_map::PointcloudBasedOccupancyGridMapNode> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.353254933] [pointcloud_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<occupancy_grid_map::PointcloudBasedOccupancyGridMapNode> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/perception/occupancy_grid_map/occupancy_grid_map_node' in container 'pointcloud_container'
+[component_container_mt-2] [0m[INFO 1730884781.366758995] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::ApproximateDownsampleFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.366788471] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::BlockageDiagComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.366794596] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::CropBoxFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.366799383] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::DistortionCorrectorComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.366804196] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::DualReturnOutlierFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.366809070] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::Lanelet2MapFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.366829071] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PassThroughFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.366833764] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PassThroughFilterUInt16Component> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.366838324] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PointCloudConcatenateDataSynchronizerComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.366843337] [pointcloud_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PointCloudConcatenateDataSynchronizerComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container_mt-2] [31m[ERROR 1730884781.373530620] [sensing.lidar.concatenate_data]: Only one topic given. Need at least two topics to continue. (PointCloudConcatenateDataSynchronizerComponent() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/sensing/pointcloud_preprocessor/src/concatenate_data/concatenate_data_nodelet.cpp:96)[0m
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/sensing/lidar/concatenate_data' in container 'pointcloud_container'
+[component_container_mt-2] [0m[INFO 1730884781.374282090] [pointcloud_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/compare_map_segmentation/lib/libcompare_map_segmentation.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container_mt-2] [0m[INFO 1730884781.378274340] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<compare_map_segmentation::CompareElevationMapFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.378299126] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<compare_map_segmentation::DistanceBasedCompareMapFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.378305046] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<compare_map_segmentation::VoxelBasedApproximateCompareMapFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.378310473] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<compare_map_segmentation::VoxelBasedCompareMapFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.378315929] [pointcloud_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<compare_map_segmentation::VoxelBasedCompareMapFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container_mt-2] [0m[INFO 1730884781.386212702] [perception.object_recognition.detection.voxel_based_compare_map_filter]: Filter (as Component) successfully created with the following parameters:
+[component_container_mt-2]  - approximate_sync : false
+[component_container_mt-2]  - use_indices      : false
+[component_container_mt-2]  - latched_indices  : false
+[component_container_mt-2]  - max_queue_size   : 5 (Filter() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/sensing/pointcloud_preprocessor/src/filter.cpp:79)[0m
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/perception/object_recognition/detection/voxel_based_compare_map_filter' in container 'pointcloud_container'
+[component_container_mt-2] [0m[INFO 1730884781.390483162] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::ApproximateDownsampleFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.390508451] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::BlockageDiagComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.390528429] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::CropBoxFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.390533897] [pointcloud_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::CropBoxFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container-42] [0m[INFO 1730884781.396144996] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::ApproximateDownsampleFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.396176026] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::BlockageDiagComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.396183205] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::CropBoxFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.396188643] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::DistortionCorrectorComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.396192885] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::DualReturnOutlierFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.396196413] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::Lanelet2MapFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.396199660] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PassThroughFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.396202752] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PassThroughFilterUInt16Component> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.396205774] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PointCloudConcatenateDataSynchronizerComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.396209284] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PointcloudAccumulatorComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.396212346] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PolygonRemoverComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.396215471] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::RadiusSearch2DOutlierFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.396233281] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::RandomDownsampleFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.396236742] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::RingOutlierFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.396239849] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::VectorMapInsideAreaFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.396242861] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::VoxelGridDownsampleFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.396245930] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::VoxelGridOutlierFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.396249035] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::VoxelGridOutlierFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container_mt-2] [0m[INFO 1730884781.399782652] [localization.util.crop_box_filter_measurement_range]: Filter (as Component) successfully created with the following parameters:
+[component_container_mt-2]  - approximate_sync : false
+[component_container_mt-2]  - use_indices      : false
+[component_container_mt-2]  - latched_indices  : false
+[component_container_mt-2]  - max_queue_size   : 5 (Filter() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/sensing/pointcloud_preprocessor/src/filter.cpp:79)[0m
+[component_container-42] [0m[INFO 1730884781.403038781] [perception.object_recognition.detection.clustering.outlier_filter]: Filter (as Component) successfully created with the following parameters:
+[component_container-42]  - approximate_sync : false
+[component_container-42]  - use_indices      : false
+[component_container-42]  - latched_indices  : false
+[component_container-42]  - max_queue_size   : 5 (Filter() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/sensing/pointcloud_preprocessor/src/filter.cpp:79)[0m
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/perception/object_recognition/detection/clustering/outlier_filter' in container '/perception/object_recognition/detection/clustering/euclidean_cluster_container'
+[component_container-42] [0m[INFO 1730884781.408477931] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::ApproximateDownsampleFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.408503935] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::ApproximateDownsampleFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container-42] [0m[INFO 1730884781.416220802] [perception.object_recognition.detection.clustering.voxel_grid_filter_a_64443_8570204623066917770]: Filter (as Component) successfully created with the following parameters:
+[component_container-42]  - approximate_sync : false
+[component_container-42]  - use_indices      : false
+[component_container-42]  - latched_indices  : false
+[component_container-42]  - max_queue_size   : 5 (Filter() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/sensing/pointcloud_preprocessor/src/filter.cpp:79)[0m
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/localization/util/crop_box_filter_measurement_range' in container 'pointcloud_container'
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/perception/object_recognition/detection/clustering/voxel_grid_filter_a_64443_8570204623066917770' in container '/perception/object_recognition/detection/clustering/euclidean_cluster_container'
+[component_container-42] [0m[INFO 1730884781.420729156] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/euclidean_cluster/lib/libvoxel_grid_based_euclidean_cluster_node_core.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container_mt-2] [0m[INFO 1730884781.421567343] [pointcloud_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/ground_segmentation/lib/libground_segmentation.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container_mt-2] [0m[INFO 1730884781.422747399] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<ground_segmentation::RANSACGroundFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.422767191] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<ground_segmentation::RayGroundFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.422773343] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<ground_segmentation::ScanGroundFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.422778861] [pointcloud_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<ground_segmentation::ScanGroundFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container-42] [0m[INFO 1730884781.425426223] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Found class: rclcpp_components::NodeFactoryTemplate<euclidean_cluster::VoxelGridBasedEuclideanClusterNode> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-42] [0m[INFO 1730884781.425457258] [perception.object_recognition.detection.clustering.euclidean_cluster_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<euclidean_cluster::VoxelGridBasedEuclideanClusterNode> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container_mt-2] [0m[INFO 1730884781.429756582] [perception.obstacle_segmentation.common_ground_filter]: Filter (as Component) successfully created with the following parameters:
+[component_container_mt-2]  - approximate_sync : false
+[component_container_mt-2]  - use_indices      : false
+[component_container_mt-2]  - latched_indices  : false
+[component_container_mt-2]  - max_queue_size   : 5 (Filter() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/sensing/pointcloud_preprocessor/src/filter.cpp:79)[0m
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/perception/object_recognition/detection/clustering/euclidean_cluster' in container '/perception/object_recognition/detection/clustering/euclidean_cluster_container'
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/perception/obstacle_segmentation/common_ground_filter' in container 'pointcloud_container'
+[component_container_mt-2] [0m[INFO 1730884781.443042632] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::ApproximateDownsampleFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.443084075] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::BlockageDiagComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.443094653] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::CropBoxFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.443104718] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::DistortionCorrectorComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.443113127] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::DualReturnOutlierFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.443141850] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::Lanelet2MapFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.443151882] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PassThroughFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.443159984] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PassThroughFilterUInt16Component> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.443168000] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PointCloudConcatenateDataSynchronizerComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.443175636] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PointcloudAccumulatorComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.443183102] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PolygonRemoverComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.443191014] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::RadiusSearch2DOutlierFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.443198344] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::RandomDownsampleFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.443205781] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::RingOutlierFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.443213245] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::VectorMapInsideAreaFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.443220699] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::VoxelGridDownsampleFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.443227974] [pointcloud_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::VoxelGridDownsampleFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container_mt-2] [0m[INFO 1730884781.449274376] [localization.util.voxel_grid_downsample_filter]: Filter (as Component) successfully created with the following parameters:
+[component_container_mt-2]  - approximate_sync : false
+[component_container_mt-2]  - use_indices      : false
+[component_container_mt-2]  - latched_indices  : false
+[component_container_mt-2]  - max_queue_size   : 5 (Filter() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/sensing/pointcloud_preprocessor/src/filter.cpp:79)[0m
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/localization/util/voxel_grid_downsample_filter' in container 'pointcloud_container'
+[component_container_mt-2] [0m[INFO 1730884781.452957554] [pointcloud_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/occupancy_grid_map_outlier_filter/lib/liboccupancy_grid_map_outlier_filter.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container_mt-2] [0m[INFO 1730884781.453862654] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<occupancy_grid_map_outlier_filter::OccupancyGridMapOutlierFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.453882043] [pointcloud_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<occupancy_grid_map_outlier_filter::OccupancyGridMapOutlierFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/perception/obstacle_segmentation/occupancy_grid_map_outlier_filter' in container 'pointcloud_container'
+[component_container_mt-2] [0m[INFO 1730884781.464819294] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::ApproximateDownsampleFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.464848100] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::BlockageDiagComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.464853210] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::CropBoxFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.464856671] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::DistortionCorrectorComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.464872897] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::DualReturnOutlierFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.464883683] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::Lanelet2MapFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.464887044] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PassThroughFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.464892585] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PassThroughFilterUInt16Component> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.464896024] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PointCloudConcatenateDataSynchronizerComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.464899355] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PointcloudAccumulatorComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.464902631] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::PolygonRemoverComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.464905591] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::RadiusSearch2DOutlierFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.464909521] [pointcloud_container]: Found class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::RandomDownsampleFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container_mt-2] [0m[INFO 1730884781.464928477] [pointcloud_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<pointcloud_preprocessor::RandomDownsampleFilterComponent> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[component_container_mt-2] [0m[INFO 1730884781.470461398] [localization.util.random_downsample_filter]: Filter (as Component) successfully created with the following parameters:
+[component_container_mt-2]  - approximate_sync : false
+[component_container_mt-2]  - use_indices      : false
+[component_container_mt-2]  - latched_indices  : false
+[component_container_mt-2]  - max_queue_size   : 5 (Filter() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/sensing/pointcloud_preprocessor/src/filter.cpp:79)[0m
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/localization/util/random_downsample_filter' in container 'pointcloud_container'
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/map/pointcloud_map_loader' in container '/map/map_container'
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container-25] [0m[INFO 1730884781.638254154] [map.map_container]: Load Library: /home/a/carla-autoware-universe/autoware/install/map_tf_generator/lib/libvector_map_tf_generator_node.so (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:102)[0m
+[component_container-25] [0m[INFO 1730884781.639942497] [map.map_container]: Found class: rclcpp_components::NodeFactoryTemplate<VectorMapTFGeneratorNode> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:115)[0m
+[component_container-25] [0m[INFO 1730884781.639957095] [map.map_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<VectorMapTFGeneratorNode> (create_component_factory() at /tmp/binarydeb/ros-galactic-rclcpp-components-9.2.2/src/component_manager.cpp:117)[0m
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/map/vector_map_tf_generator' in container '/map/map_container'
+[INFO] [detection_by_tracker-49]: sending signal 'SIGINT' to process[detection_by_tracker-49]
+[INFO] [object_range_splitter_node-48]: sending signal 'SIGINT' to process[object_range_splitter_node-48]
+[INFO] [detected_object_feature_remover-47]: sending signal 'SIGINT' to process[detected_object_feature_remover-47]
+[INFO] [shape_estimation-46]: sending signal 'SIGINT' to process[shape_estimation-46]
+[INFO] [detected_object_feature_remover-44]: sending signal 'SIGINT' to process[detected_object_feature_remover-44]
+[INFO] [shape_estimation-43]: sending signal 'SIGINT' to process[shape_estimation-43]
+[INFO] [component_container-42]: sending signal 'SIGINT' to process[component_container-42]
+[INFO] [localization_error_monitor-41]: sending signal 'SIGINT' to process[localization_error_monitor-41]
+[INFO] [twist2accel-40]: sending signal 'SIGINT' to process[twist2accel-40]
+[INFO] [stop_filter-39]: sending signal 'SIGINT' to process[stop_filter-39]
+[INFO] [ekf_localizer-38]: sending signal 'SIGINT' to process[ekf_localizer-38]
+[INFO] [gyro_odometer-37]: sending signal 'SIGINT' to process[gyro_odometer-37]
+[INFO] [ndt_scan_matcher-36]: sending signal 'SIGINT' to process[ndt_scan_matcher-36]
+[INFO] [automatic_pose_initializer-35]: sending signal 'SIGINT' to process[automatic_pose_initializer-35]
+[INFO] [pose_initializer_node-34]: sending signal 'SIGINT' to process[pose_initializer_node-34]
+[INFO] [map_height_fitter-33]: sending signal 'SIGINT' to process[map_height_fitter-33]
+[INFO] [vehicle_velocity_converter-32]: sending signal 'SIGINT' to process[vehicle_velocity_converter-32]
+[INFO] [gnss_poser-31]: sending signal 'SIGINT' to process[gnss_poser-31]
+[INFO] [imu_corrector-30]: sending signal 'SIGINT' to process[imu_corrector-30]
+[INFO] [relay-28]: sending signal 'SIGINT' to process[relay-28]
+[INFO] [relay-27]: sending signal 'SIGINT' to process[relay-27]
+[INFO] [map_hash_generator-26]: sending signal 'SIGINT' to process[map_hash_generator-26]
+[INFO] [component_container-25]: sending signal 'SIGINT' to process[component_container-25]
+[INFO] [component_container-24]: sending signal 'SIGINT' to process[component_container-24]
+[INFO] [component_container-23]: sending signal 'SIGINT' to process[component_container-23]
+[INFO] [emergency_handler-22]: sending signal 'SIGINT' to process[emergency_handler-22]
+[INFO] [system_error_monitor-21]: sending signal 'SIGINT' to process[system_error_monitor-21]
+[INFO] [aggregator_node-20]: sending signal 'SIGINT' to process[aggregator_node-20]
+[INFO] [topic_state_monitor_node-19]: sending signal 'SIGINT' to process[topic_state_monitor_node-19]
+[INFO] [topic_state_monitor_node-18]: sending signal 'SIGINT' to process[topic_state_monitor_node-18]
+[INFO] [topic_state_monitor_node-17]: sending signal 'SIGINT' to process[topic_state_monitor_node-17]
+[INFO] [topic_state_monitor_node-16]: sending signal 'SIGINT' to process[topic_state_monitor_node-16]
+[INFO] [topic_state_monitor_node-15]: sending signal 'SIGINT' to process[topic_state_monitor_node-15]
+[INFO] [topic_state_monitor_node-14]: sending signal 'SIGINT' to process[topic_state_monitor_node-14]
+[INFO] [topic_state_monitor_node-13]: sending signal 'SIGINT' to process[topic_state_monitor_node-13]
+[INFO] [topic_state_monitor_node-12]: sending signal 'SIGINT' to process[topic_state_monitor_node-12]
+[INFO] [topic_state_monitor_node-11]: sending signal 'SIGINT' to process[topic_state_monitor_node-11]
+[INFO] [topic_state_monitor_node-10]: sending signal 'SIGINT' to process[topic_state_monitor_node-10]
+[INFO] [topic_state_monitor_node-9]: sending signal 'SIGINT' to process[topic_state_monitor_node-9]
+[INFO] [topic_state_monitor_node-8]: sending signal 'SIGINT' to process[topic_state_monitor_node-8]
+[INFO] [detection_by_tracker-49]: process has finished cleanly [pid 64908]
+[INFO] [topic_state_monitor_node-7]: sending signal 'SIGINT' to process[topic_state_monitor_node-7]
+[INFO] [detected_object_feature_remover-47]: process has finished cleanly [pid 64902]
+[INFO] [object_range_splitter_node-48]: process has finished cleanly [pid 64904]
+[INFO] [topic_state_monitor_node-6]: sending signal 'SIGINT' to process[topic_state_monitor_node-6]
+[INFO] [component_container-5]: sending signal 'SIGINT' to process[component_container-5]
+[INFO] [shape_estimation-46]: process has finished cleanly [pid 64900]
+[INFO] [component_container_mt-4]: sending signal 'SIGINT' to process[component_container_mt-4]
+[INFO] [robot_state_publisher-3]: sending signal 'SIGINT' to process[robot_state_publisher-3]
+[INFO] [detected_object_feature_remover-44]: process has finished cleanly [pid 64896]
+[INFO] [component_container_mt-2]: sending signal 'SIGINT' to process[component_container_mt-2]
+[INFO] [shape_estimation-43]: process has finished cleanly [pid 64894]
+[INFO] [localization_error_monitor-41]: process has finished cleanly [pid 64889]
+[INFO] [carla_pointcloud_node-1]: sending signal 'SIGINT' to process[carla_pointcloud_node-1]
+[INFO] [twist2accel-40]: process has finished cleanly [pid 64887]
+[INFO] [component_container-42]: process has finished cleanly [pid 64891]
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container_mt-2] Warning: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[component_container_mt-2]          at line 156 in /tmp/binarydeb/ros-galactic-tf2-0.17.5/src/buffer_core.cpp
+[component_container_mt-2] [33m[WARN 1730884782.372890864] [sensing.lidar.concatenate_data]: diagnostic_updater: No HW_ID was set. This is probably a bug. Please report it. For devices that do not have a HW_ID, set this value to 'none'. This warning only occurs once all diagnostics are OK. It is okay to wait until the device is open before calling setHardwareID. (update() at /opt/ros/galactic/include/diagnostic_updater/diagnostic_updater.hpp:534)[0m
+[INFO] [stop_filter-39]: process has finished cleanly [pid 64885]
+[INFO] [ekf_localizer-38]: process has finished cleanly [pid 64883]
+[component_container-25] [0m[INFO 1730884781.668880570] [map.vector_map_tf_generator]: broadcast static tf. map_frame:map, viewer_frame:base_link, x:-94.0903, y:-111.574, z:-4.91556 (onVectorMap() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/map/map_tf_generator/src/vector_map_tf_generator_node.cpp:91)[0m
+[aggregator_node-20] [31m[ERROR 1730884782.089125978] [generic_analyzer_base]: Attempting to convert 128 into DiagnosticLevel.
+[aggregator_node-20]     Values are: {0: OK, 1: Warning, 2: Error, 3: Stale} (valToLevel() at /tmp/binarydeb/ros-galactic-diagnostic-aggregator-2.1.3/include/diagnostic_aggregator/status_item.hpp:101)[0m
+[aggregator_node-20] [31m[ERROR 1730884782.089174924] [generic_analyzer_base]: Attempting to convert 64 into DiagnosticLevel.
+[aggregator_node-20]     Values are: {0: OK, 1: Warning, 2: Error, 3: Stale} (valToLevel() at /tmp/binarydeb/ros-galactic-diagnostic-aggregator-2.1.3/include/diagnostic_aggregator/status_item.hpp:101)[0m
+[aggregator_node-20] [31m[ERROR 1730884782.089192528] [generic_analyzer_base]: Attempting to convert 111 into DiagnosticLevel.
+[aggregator_node-20]     Values are: {0: OK, 1: Warning, 2: Error, 3: Stale} (valToLevel() at /tmp/binarydeb/ros-galactic-diagnostic-aggregator-2.1.3/include/diagnostic_aggregator/status_item.hpp:101)[0m
+[aggregator_node-20] [31m[ERROR 1730884782.089223227] [generic_analyzer_base]: Attempting to convert 198 into DiagnosticLevel.
+[aggregator_node-20]     Values are: {0: OK, 1: Warning, 2: Error, 3: Stale} (valToLevel() at /tmp/binarydeb/ros-galactic-diagnostic-aggregator-2.1.3/include/diagnostic_aggregator/status_item.hpp:101)[0m
+[component_container_mt-4] [0m[INFO 1730884782.103855405] [system.system_monitor.gpu_monitor]: GPUMonitorBase::checkTemp not implemented. (checkTemp() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/system/system_monitor/src/gpu_monitor/gpu_monitor_base.cpp:55)[0m
+[component_container_mt-4] [0m[INFO 1730884782.103917360] [system.system_monitor.gpu_monitor]: GPUMonitorBase::checkUsage not implemented. (checkUsage() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/system/system_monitor/src/gpu_monitor/gpu_monitor_base.cpp:60)[0m
+[component_container_mt-4] [0m[INFO 1730884782.103925426] [system.system_monitor.gpu_monitor]: GPUMonitorBase::checkMemoryUsage not implemented. (checkMemoryUsage() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/system/system_monitor/src/gpu_monitor/gpu_monitor_base.cpp:65)[0m
+[component_container_mt-4] [0m[INFO 1730884782.103936099] [system.system_monitor.gpu_monitor]: GPUMonitorBase::checkThrottling not implemented. (checkThrottling() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/system/system_monitor/src/gpu_monitor/gpu_monitor_base.cpp:70)[0m
+[component_container_mt-4] [0m[INFO 1730884782.103943975] [system.system_monitor.gpu_monitor]: GPUMonitorBase::checkFrequency not implemented. (checkFrequency() at /home/a/carla-autoware-universe/autoware/src/universe/autoware.universe/system/system_monitor/src/gpu_monitor/gpu_monitor_base.cpp:75)[0m
+[detection_by_tracker-49] [0m[INFO 1730884782.859544034] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[INFO] [gyro_odometer-37]: process has finished cleanly [pid 64881]
+[object_range_splitter_node-48] [0m[INFO 1730884782.864173336] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[detected_object_feature_remover-47] [0m[INFO 1730884782.869832188] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[shape_estimation-46] [0m[INFO 1730884782.875463500] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[detected_object_feature_remover-44] [0m[INFO 1730884782.882423474] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[shape_estimation-43] [0m[INFO 1730884782.888968496] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[component_container-42] [0m[INFO 1730884782.894196306] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[localization_error_monitor-41] [0m[INFO 1730884782.899493258] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[twist2accel-40] [0m[INFO 1730884782.904497461] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[stop_filter-39] [0m[INFO 1730884782.910266893] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[ekf_localizer-38] [0m[INFO 1730884782.915796045] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[gyro_odometer-37] [0m[INFO 1730884782.921410828] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[ndt_scan_matcher-36] [0m[INFO 1730884782.927077202] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[automatic_pose_initializer-35] [0m[INFO 1730884782.932292074] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[pose_initializer_node-34] [0m[INFO 1730884782.938216427] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[map_height_fitter-33] [0m[INFO 1730884782.944396958] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[vehicle_velocity_converter-32] [0m[INFO 1730884782.950068619] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[gnss_poser-31] [0m[INFO 1730884782.956191209] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[imu_corrector-30] [0m[INFO 1730884782.961806999] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[relay-28] [0m[INFO 1730884782.967213004] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[relay-27] [0m[INFO 1730884782.972314748] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[component_container-25] [0m[INFO 1730884782.982202804] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[component_container-24] [0m[INFO 1730884782.987727967] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[component_container-23] [0m[INFO 1730884782.992710287] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[emergency_handler-22] [0m[INFO 1730884782.998067121] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[system_error_monitor-21] [0m[INFO 1730884783.003326137] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[topic_state_monitor_node-19] [0m[INFO 1730884783.014767022] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[topic_state_monitor_node-18] [0m[INFO 1730884783.022056392] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[topic_state_monitor_node-17] [0m[INFO 1730884783.028485577] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[topic_state_monitor_node-16] [0m[INFO 1730884783.032952465] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[topic_state_monitor_node-15] [0m[INFO 1730884783.037544353] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[topic_state_monitor_node-14] [0m[INFO 1730884783.042020054] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[topic_state_monitor_node-13] [0m[INFO 1730884783.046625305] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[topic_state_monitor_node-12] [0m[INFO 1730884783.051320047] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[topic_state_monitor_node-11] [0m[INFO 1730884783.057701547] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[topic_state_monitor_node-10] [0m[INFO 1730884783.065877926] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[topic_state_monitor_node-9] [0m[INFO 1730884783.071784539] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[topic_state_monitor_node-8] [0m[INFO 1730884783.077027402] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[topic_state_monitor_node-7] [0m[INFO 1730884783.082963283] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[topic_state_monitor_node-6] [0m[INFO 1730884783.089099319] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[component_container-5] [0m[INFO 1730884783.097420440] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[component_container_mt-4] [0m[INFO 1730884783.106410782] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[robot_state_publisher-3] [0m[INFO 1730884783.113467020] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[component_container_mt-2] [0m[INFO 1730884783.121034571] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[carla_pointcloud_node-1] [0m[INFO 1730884783.127149582] [rclcpp]: signal_handler(signal_value=2) (signal_handler() at /tmp/binarydeb/ros-galactic-rclcpp-9.2.2/src/rclcpp/signal_handler.cpp:202)[0m
+[INFO] [automatic_pose_initializer-35]: process has finished cleanly [pid 64875]
+[INFO] [pose_initializer_node-34]: process has finished cleanly [pid 64873]
+[INFO] [map_height_fitter-33]: process has finished cleanly [pid 64871]
+[INFO] [vehicle_velocity_converter-32]: process has finished cleanly [pid 64833]
+[INFO] [relay-28]: process has finished cleanly [pid 64793]
+[INFO] [imu_corrector-30]: process has finished cleanly [pid 64829]
+[INFO] [relay-27]: process has finished cleanly [pid 64790]
+[INFO] [map_hash_generator-26]: process has finished cleanly [pid 64713]
+[INFO] [component_container-25]: process has finished cleanly [pid 64623]
+[INFO] [component_container-23]: process has finished cleanly [pid 64608]
+[INFO] [emergency_handler-22]: process has finished cleanly [pid 64509]
+[INFO] [system_error_monitor-21]: process has finished cleanly [pid 64507]
+[INFO] [aggregator_node-20]: process has finished cleanly [pid 64505]
+[INFO] [topic_state_monitor_node-18]: process has finished cleanly [pid 64501]
+[INFO] [topic_state_monitor_node-17]: process has finished cleanly [pid 64499]
+[INFO] [topic_state_monitor_node-16]: process has finished cleanly [pid 64497]
+[INFO] [topic_state_monitor_node-15]: process has finished cleanly [pid 64495]
+[INFO] [topic_state_monitor_node-14]: process has finished cleanly [pid 64493]
+[INFO] [topic_state_monitor_node-13]: process has finished cleanly [pid 64491]
+[INFO] [topic_state_monitor_node-12]: process has finished cleanly [pid 64489]
+[INFO] [topic_state_monitor_node-11]: process has finished cleanly [pid 64487]
+[INFO] [gnss_poser-31]: process has finished cleanly [pid 64831]
+[INFO] [topic_state_monitor_node-10]: process has finished cleanly [pid 64485]
+[INFO] [topic_state_monitor_node-9]: process has finished cleanly [pid 64483]
+[INFO] [topic_state_monitor_node-8]: process has finished cleanly [pid 64481]
+[INFO] [topic_state_monitor_node-7]: process has finished cleanly [pid 64479]
+[INFO] [topic_state_monitor_node-6]: process has finished cleanly [pid 64477]
+[INFO] [component_container-24]: process has finished cleanly [pid 64619]
+[INFO] [component_container-5]: process has finished cleanly [pid 64475]
+[INFO] [robot_state_publisher-3]: process has finished cleanly [pid 64471]
+[INFO] [topic_state_monitor_node-19]: process has finished cleanly [pid 64503]
+[INFO] [carla_pointcloud_node-1]: process has finished cleanly [pid 64467]
+[INFO] [component_container_mt-2]: process has finished cleanly [pid 64469]
+[INFO] [component_container_mt-4]: process has finished cleanly [pid 64473]
+[INFO] [ndt_scan_matcher-36]: process has finished cleanly [pid 64877]
+Ego Vehicle:  hero
+Executing stack... hero C_track_1_0_7
+Scenario Ended , Hero has fallen, Sayonara

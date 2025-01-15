@@ -18,6 +18,7 @@ import time
 import numpy
 import numpy as np
 import carla
+#import utm # HH_240407
 from transforms3d.euler import euler2mat, quat2euler, euler2quat
 import rclpy
 from rclpy.clock import ClockType
@@ -155,7 +156,7 @@ class Ros2Agent(AutonomousAgent):
                     CameraInfo, "/sensing/camera/traffic_light/camera_info", 1)
             elif sensor['type'] == 'sensor.lidar.ray_cast':
                 self.sensing_cloud_publisher = self.ros2_node.create_publisher(
-                    PointCloud2, '/sensing/lidar/pointcloud_raw', 10)
+                    PointCloud2, '/sensing/lidar/pointcloud_raw', 10) # HH_230831
             elif sensor['type'] == 'sensor.other.gnss':
                 self.publisher_map[sensor['id']] = self.ros2_node.create_publisher(
                     NavSatFix,  "/sensing/gnss/ublox/nav_sat_fix", 1)
@@ -216,20 +217,29 @@ class Ros2Agent(AutonomousAgent):
         cmd = carla.VehicleControl()  
 
         cmd.steer = (-data.lateral.steering_tire_angle / self.max_steer_angle)*self.steering_factor
-        speed_diff = data.longitudinal.speed - self.speed 
-        if speed_diff > 0.05: # 현재 속도가 이전 속도보다 빠른 경우 -> 가속
-            cmd.throttle = 0.75           
-            cmd.brake = 0.0   
-        elif speed_diff <= 0.05: # 현재 속도가 이전 속도보다 느린 경우 -> 감속
+        speed_diff = data.longitudinal.speed - self.speed
+        
+        if speed_diff > 0.01: # 앞으로 나가는 상황
+            cmd.throttle = min(1.0, 0.5 + 0.15 * speed_diff)
+            cmd.brake = 0.0
+            # cmd.reverse = false
+        elif speed_diff <= 0.1:  # 정지 또는 후진 상황
+            if data.longitudinal.speed <= 0.0:
+                # 차량이 이미 정지 중이면 브레이크만 사용
+                cmd.throttle = 0.0
+                cmd.brake = 0.75  # 브레이크를 사용하여 정지
+        elif speed_diff > -1.0:
+            # 속도 감소가 미미한 경우에는 감속만 사용하여 부드러운 정지
             cmd.throttle = 0.0
-            if data.longitudinal.speed <= 0.0 : # 현재 속도가 이전 속도보다 느린데, 현재 속도가 0.1 이하 -> 정지
-                cmd.brake = 1.0
-            elif  speed_diff > -1.0: # 현재 속도가 0.5 이상 -> 주행 
-                cmd.brake = 0.0
-            else :
-                cmd.brake = 0.01
+            cmd.brake = 0.1 * abs(speed_diff)
+            # cmd.reverse = false
+        #else:
+            # 속도 감소가 큰 경우에는 후진
+        #    cmd.throttle = 0.0
+        #    cmd.brake = 0.01  # 미세한 브레이크 사용
+            # cmd.reverse = true
 
-        # cmd.steer = -data.lateral.steering_tire_rotation_angle 
+        #cmd.steer = -data.lateral.steering_tire_rotation_angle 
         self.current_control = cmd
         self.step_mode_possible = True
 
@@ -243,11 +253,14 @@ class Ros2Agent(AutonomousAgent):
         cmd.steer = data.twist.angular.z/100.0
         cmd.brake = data.twist.linear.y/100.0        
 
+	# HH_240126
         #print('Received Command : ', cmd.throttle, cmd.steer)
-        # if cmd.throttle < 0:
-        #     cmd.reverse = 1
-        # else:
-        #     cmd.reverse = 0
+        #if cmd.throttle < 0.0: # HH_240126 # < 0
+        #    cmd.reverse = 1
+        #    cmd.gear = 2
+        #else:
+        #    cmd.reverse = 0
+        #    cmd.gear = 1
 
         #cmd.gear = 1
         #cmd.manual_gear_shift = data.manual_gear_shift
@@ -269,22 +282,21 @@ class Ros2Agent(AutonomousAgent):
         camera_info.width = int(attributes['width'])
         camera_info.height = int(attributes['height'])
         camera_info.distortion_model = 'plumb_bob'
-        cx = camera_info.width / 10.0
-        cy = camera_info.height / 3.5
+        cx = camera_info.width / 14.0 # ROI 높이에 영향을 주긴 함
+        cy = camera_info.height / 3.5 # ROI 높이 (cy 값이 작아질 수록 ROI는 image 상단에 위치, 커질 수록 아래쪽에 위치)
         fx = camera_info.width / (
-            8.0 * math.tan(float(attributes['fov']) * math.pi / 360.0))
+            10.0 * math.tan(float(attributes['fov']) * math.pi / 360.0)) # ROI 너비 - 가로축 (앞의 계수 값이 작을수록 넓은 너비, 클수록 작은 너비)
         fy = fx
         camera_info.k = [fx, 0.0, cx, 0.0, fy, cy, 0.0, 0.0, 1.0]
         camera_info.d = [0.0, 0.0, 0.0, 0.0, 0.0]
         camera_info.r = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
         camera_info.p = [fx, 0.0, cx, 0.0, 0.0, fy, cy, 0.0, 0.0, 0.0, 1.0, 0.0]
-
         # HH_240924 TLR 시 필수 
-        camera_info.roi.x_offset = 300
+        camera_info.roi.x_offset = 200
         camera_info.roi.y_offset = 0
         camera_info.roi.height = camera_info.height
         camera_info.roi.width = camera_info.width
-        camera_info.roi.do_rectify = False
+        camera_info.roi.do_rectify = True
         
         return camera_info
 
@@ -311,9 +323,9 @@ class Ros2Agent(AutonomousAgent):
         #rospy.loginfo("Publishing Plan...")
         self.waypoint_publisher.publish(msg)
 
-    def sensors(self):
+    def sensors(self): # HH_230831 # for sensor tf # HH_231106 lidar z
         sensors = [{'type': 'sensor.camera.rgb', 'x': 0.7, 'y': 0.0, 'z': 1.6, 'roll': 0.0, 'pitch': 0.0, 'yaw': 0.0,
-            'width': 1280, 'height': 720, 'fov': 100, 'id': 'Center'},
+            'width': 1280, 'height': 720, 'fov': 90, 'id': 'Center'}, # HH_240927 'fov': 100
             {'type': 'sensor.lidar.ray_cast', 'x': 0.0, 'y': 0.0, 'z': 3.0, 'roll': 0.0, 'pitch': 0.0,
              'yaw': 270.0, 'id': 'LIDAR'},
             {'type': 'sensor.other.gnss', 'x': 0.0, 'y': 0.0, 'z': 2.4, 'id': 'GPS'},
@@ -329,10 +341,10 @@ class Ros2Agent(AutonomousAgent):
         Returns ROS message header
         """
         header = Header()
-        # seconds = int(self.timestamp)
-        # nanoseconds = int((self.timestamp - int(self.timestamp)) * 1000000000.0)
-        # header.stamp = Time(sec=seconds, nanosec=nanoseconds) 
-        # HH_241007   
+        #seconds = int(self.timestamp)
+        #nanoseconds = int((self.timestamp - int(self.timestamp)) * 1000000000.0)
+        #header.stamp = Time(sec=seconds, nanosec=nanoseconds)    
+        # 
         current_time = time.time()
         seconds = int(current_time)
         nanoseconds = int((current_time - seconds) * 1e9)
@@ -378,7 +390,7 @@ class Ros2Agent(AutonomousAgent):
             # concat_msg = create_cloud(header,fields, lidar_data)
             # self.perception_cloud_publisher.publish(concat_msg)
 
-            header.frame_id = 'velodyne' # HH_241007
+            header.frame_id = 'velodyne' # HH_230831
             msg = create_cloud(header,fields, lidar_data)
             self.sensing_cloud_publisher.publish(msg)   
         else:
@@ -394,6 +406,10 @@ class Ros2Agent(AutonomousAgent):
         msg.latitude = data[0]
         msg.longitude = data[1]
         msg.altitude = data[2] + 17.0
+        
+        # HH_240407 lat/long to utm
+        #msg.latitude, msg.longitude, zone_number, zone_letter = utm.from_latlon(data[0], data[1])
+
         msg.status.status = NavSatStatus.STATUS_SBAS_FIX
         # pylint: disable=line-too-long
         msg.status.service = NavSatStatus.SERVICE_GPS | NavSatStatus.SERVICE_GLONASS | NavSatStatus.SERVICE_COMPASS | NavSatStatus.SERVICE_GALILEO
@@ -407,7 +423,7 @@ class Ros2Agent(AutonomousAgent):
         msg = self.cv_bridge.cv2_to_imgmsg(data, encoding='bgra8')
         # the camera data is in respect to the camera's own frame
         msg.header = self.get_header()
-        msg.header.frame_id = 'camera0/camera_link' # HH_241007
+        msg.header.frame_id = 'camera0/camera_link' # HH_230831 camera4/camera_link
 
         cam_info = self.id_to_camera_info_map[sensor_id]
         cam_info.header = msg.header
@@ -451,7 +467,7 @@ class Ros2Agent(AutonomousAgent):
         self.speed = data['speed']
         twist_msg = TwistWithCovariance()        
         twist_msg.twist.linear.x = data['speed']        
-        if twist_msg.twist.linear.x < 0.0:
+        if twist_msg.twist.linear.x <= 0.0: # < 0.0 # HH_240120
             twist_msg.twist.linear.x = 0.0
         twist_msg.twist.angular.z = -self.current_control.steer
         twist_msg.twist.linear.z = 1.0 # to tell OpenPlanner to use the steer directly
@@ -483,7 +499,7 @@ class Ros2Agent(AutonomousAgent):
         self.auto_steering_status_publisher.publish(steer_rep)
 
         gear_rep = GearReport()
-        gear_rep.report = GearReport.DRIVE
+        gear_rep.report = GearReport.DRIVE # HH_240127 # Autoware GEAR # REVERSE
         self.auto_gear_status_publisher.publish(gear_rep)
 
         control_mode_rep = ControlModeReport()

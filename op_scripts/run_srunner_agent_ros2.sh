@@ -29,4 +29,4 @@ export FREE_AGENT_POSE=""
 
 gnome-terminal -- bash -c roscore
 
-python ${LEADERBOARD_ROOT}/op_bridge/op_bridge.py
+python3 ${LEADERBOARD_ROOT}/op_bridge/op_bridge_ros2.py

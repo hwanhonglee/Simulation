@@ -1,11 +1,11 @@
 #############################
 # Map exploration Mode
-# Load the map specified with "FREE_MAP_NAME" and attach the ego vehicle agent to the only vehile in that map 
+# Load the map specified with "FREE_MAP_NAME" and attach the ego vehicle agent to the only vehicle in that map 
 # No scenario required, the ego vehicle should explore the scene 
 #############################
 
-# export SIMULATOR_LOCAL_HOST="localhost"
-export SIMULATOR_LOCAL_HOST="192.168.11.5"
+# export SIMULATOR_LOCAL_HOST="119.204.131.9"
+export SIMULATOR_LOCAL_HOST="localhost"
 export SIMULATOR_PORT="2000"
 export TEAM_AGENT=${LEADERBOARD_ROOT}/op_bridge/op_ros2_agent.py
 export PYTHONPATH="${CARLA_ROOT}/PythonAPI/carla/":"${SCENARIO_RUNNER_ROOT}":"${LEADERBOARD_ROOT}":${PYTHONPATH}
@@ -20,12 +20,12 @@ export AGENT_ROLE_NAME="hero"
 export OP_BRIDGE_MODE="free" 
 
 # CARLA town name or custom OpenDRIVE absolute path, when BRIDGE_MODE is free 
-export FREE_MAP_NAME="Town01" 
+export FREE_MAP_NAME="C_track_1_0_7" 
 
 # Spawn point for the autonomous agent, when BRIDGE_MODE is free 
 # "x,y,z,roll,pitch,yaw"
 # Empty string means random starting position
-#export FREE_AGENT_POSE="175.4,195.14,0,0,0,180" 
+#export FREE_AGENT_POSE="175.4, 195.14, 0, 0, 0, 180" 
 export FREE_AGENT_POSE=""
 
 gnome-terminal -- bash -c roscore
