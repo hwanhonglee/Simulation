@@ -4,6 +4,8 @@
 
 ScenarioRunner for CARLA - Custom modified to work with leader board CARLA 0.9.13 and OpenPlanner 
 ========================
+reference branch -> openplanner_carla_bridge // HH_250306
+
 This repository contains traffic scenario definition and an execution engine
 for CARLA. It also allows the execution of a simulation of the CARLA Challenge.
 You can use this system to prepare your agent for the CARLA Challenge.
