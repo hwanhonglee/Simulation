@@ -1,6 +1,8 @@
 # op_bridge - CARLA OpenPlanner Bridge
 OpenPlanner ROS based bridge for CARLA Simulator and Scenario Runner 
 
+reference branch -> ros2 // HH_250306
+
 ## Support: 
 - CARLA Simulator 0.9.13 release 
 - Python 2.7 
