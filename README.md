@@ -20,7 +20,7 @@ ENV:
 ENV:
 - Ubuntu 22.04
 - ROS2: Humble
-- Nvidia Driver Version: 570.57.01
+- Nvidia Driver Version: 570.86.16
 - Cuda compiler driver: release 11.6, V11.6.55
 
 - Autoware Universe: tag/2023.10
