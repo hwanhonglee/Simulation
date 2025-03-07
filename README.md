@@ -1,7 +1,7 @@
 # Autoware Universe - CARLA Simulator
 
 ## h2_i/galactic
-ENV:\
+ENV:
 - Ubuntu 20.04
 - ROS2: Galactic
 - Nvidia Driver Version: 565.57.01
@@ -16,7 +16,7 @@ ENV:\
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 ## h2_i/humble
-ENV:\
+ENV:
 - Ubuntu 22.04
 - ROS2: Humble
 - Nvidia Driver Version: 570.57.01
