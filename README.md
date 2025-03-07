@@ -1,6 +1,6 @@
 # Autoware Universe - CARLA Simulator
 
-*** h2_i/galactic ***
+## h2_i/galactic \
 ENV:\
 - Ubuntu 20.04
 - ROS2: Galactic
@@ -15,7 +15,7 @@ ENV:\
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-*** h2_i/humble ***
+## h2_i/humble\
 ENV:\
 - Ubuntu 22.04
 - ROS2: Humble
