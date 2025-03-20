@@ -34,7 +34,7 @@ ENV:
 - Unreal_Engine: 4.26
 
 - op_bridge: ros2-humble
-- op_agent: ros2-humble
+- op_agent: ros2-humble --> **need autoware_contents** (in notion.so) 
 - scenario_runner: openplanner_carla_bridge
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
