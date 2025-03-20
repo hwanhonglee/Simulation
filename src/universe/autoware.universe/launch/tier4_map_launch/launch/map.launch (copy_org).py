@@ -111,7 +111,7 @@ def launch_setup(context, *args, **kwargs):
         parameters=[
             {
                 "map_frame": "map",
-                "viewer_frame": "base_link", # HH_250106
+                "viewer_frame": "viewer",
             }
         ],
         extra_arguments=[{"use_intra_process_comms": LaunchConfiguration("use_intra_process")}],

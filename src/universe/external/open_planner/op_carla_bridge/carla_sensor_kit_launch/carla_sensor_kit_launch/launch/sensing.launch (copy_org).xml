@@ -22,11 +22,8 @@
     <include file="$(find-pkg-share carla_sensor_kit_launch)/launch/imu.launch.xml"/>
 
     <!-- GNSS Driver -->
-    <!-- HH_250319 -->
-    <include file="$(find-pkg-share sample_sensor_kit_launch)/launch/gnss.launch.xml">
-      <arg name="launch_driver" value="$(var launch_driver)"/>
-    </include>
-    
+    <!-- GNSS Drives in not needed because the CARLA Simulator already publishes both gnss pose and pose with covariance topics -->
+
     <!-- Vehicle Velocity Converter  -->
     <include file="$(find-pkg-share vehicle_velocity_converter)/launch/vehicle_velocity_converter.launch.xml">
       <arg name="input_vehicle_velocity_topic" value="/vehicle/status/velocity_status"/>

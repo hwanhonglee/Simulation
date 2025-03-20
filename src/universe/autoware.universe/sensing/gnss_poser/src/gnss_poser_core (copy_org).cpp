@@ -162,10 +162,7 @@ void GNSSPoser::callbackNavSatFix(
   // publish gnss_base_link pose_cov in map frame
   geometry_msgs::msg::PoseWithCovarianceStamped gnss_base_pose_cov_msg;
   gnss_base_pose_cov_msg.header = gnss_base_pose_msg.header;
-  // gnss_base_pose_cov_msg.pose.pose = gnss_base_pose_msg.pose; // HH_250319
-  gnss_base_pose_cov_msg.pose.pose.position.x = gnss_base_pose_msg.pose.position.x - 61073.439074010006 + 115.53240966796875;
-  gnss_base_pose_cov_msg.pose.pose.position.y = gnss_base_pose_msg.pose.position.y - 65774.00214395998 - 208.17466735839844;
-
+  gnss_base_pose_cov_msg.pose.pose = gnss_base_pose_msg.pose;
   gnss_base_pose_cov_msg.pose.covariance[7 * 0] =
     canGetCovariance(*nav_sat_fix_msg_ptr) ? nav_sat_fix_msg_ptr->position_covariance[0] : 10.0;
   gnss_base_pose_cov_msg.pose.covariance[7 * 1] =

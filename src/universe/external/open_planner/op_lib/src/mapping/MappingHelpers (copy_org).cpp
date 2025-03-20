@@ -2012,9 +2012,8 @@ void MappingHelpers::llaToxyz_proj(const std::string& proj_str, const WayPoint& 
 
 	PJ_COORD gps_degrees = proj_coord (lat, lon, alt, 0);
 	PJ_COORD xyz_out = proj_trans (P, PJ_FWD, gps_degrees);
-	// HH_250314
-	x_out = xyz_out.enu.e - 361073.4390740106;
-	y_out = xyz_out.enu.n - 4065774.0021439577;
+	x_out = xyz_out.enu.e + origin.pos.x;
+	y_out = xyz_out.enu.n + origin.pos.y;
 	z_out = xyz_out.enu.u + origin.pos.z;
 
 	proj_destroy (P);

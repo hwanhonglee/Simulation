@@ -1,4 +1,3 @@
-# HH_250319
 sensor_kit_base_link:
   camera0/camera_link:
     x: 0.0

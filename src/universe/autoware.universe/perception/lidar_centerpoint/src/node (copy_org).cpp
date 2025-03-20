@@ -38,72 +38,38 @@ namespace centerpoint
 LidarCenterPointNode::LidarCenterPointNode(const rclcpp::NodeOptions & node_options)
 : Node("lidar_center_point", node_options), tf_buffer_(this->get_clock())
 {
-  // HH_250319
   const float score_threshold =
     static_cast<float>(this->declare_parameter<double>("score_threshold", 0.35));
   const float circle_nms_dist_threshold =
-    static_cast<float>(this->declare_parameter<double>("circle_nms_dist_threshold", 0.5)); 
+    static_cast<float>(this->declare_parameter<double>("circle_nms_dist_threshold"));
   const auto yaw_norm_thresholds =
-    this->declare_parameter<std::vector<double>>("yaw_norm_thresholds", {0.3, 0.3, 0.3, 0.3, 0.0});
+    this->declare_parameter<std::vector<double>>("yaw_norm_thresholds");
   const std::string densification_world_frame_id =
     this->declare_parameter("densification_world_frame_id", "map");
   const int densification_num_past_frames =
     this->declare_parameter("densification_num_past_frames", 1);
   const std::string trt_precision = this->declare_parameter("trt_precision", "fp16");
-  const std::string encoder_onnx_path = this->declare_parameter<std::string>("encoder_onnx_path","/home/hong/autoware_data/lidar_centerpoint/pts_voxel_encoder_centerpoint_tiny.onnx");
+  const std::string encoder_onnx_path = this->declare_parameter<std::string>("encoder_onnx_path");
   const std::string encoder_engine_path =
-    this->declare_parameter<std::string>("encoder_engine_path","/home/hong/autoware_data/lidar_centerpoint/pts_voxel_encoder_centerpoint_tiny.engine");
-  const std::string head_onnx_path = this->declare_parameter<std::string>("head_onnx_path","/home/hong/autoware_data/lidar_centerpoint/pts_backbone_neck_head_centerpoint_tiny.onnx");
-  const std::string head_engine_path = this->declare_parameter<std::string>("head_engine_path","/home/hong/autoware_data/lidar_centerpoint/pts_backbone_neck_head_centerpoint_tiny.engine");
-  class_names_ = this->declare_parameter<std::vector<std::string>>("class_names",
-    {"CAR", "TRUCK", "BUS", "BICYCLE", "PEDESTRIAN"});
+    this->declare_parameter<std::string>("encoder_engine_path");
+  const std::string head_onnx_path = this->declare_parameter<std::string>("head_onnx_path");
+  const std::string head_engine_path = this->declare_parameter<std::string>("head_engine_path");
+  class_names_ = this->declare_parameter<std::vector<std::string>>("class_names");
   has_twist_ = this->declare_parameter("has_twist", false);
   const std::size_t point_feature_size =
-    static_cast<std::size_t>(this->declare_parameter<std::int64_t>("point_feature_size", 4));
+    static_cast<std::size_t>(this->declare_parameter<std::int64_t>("point_feature_size"));
   const std::size_t max_voxel_size =
-    static_cast<std::size_t>(this->declare_parameter<std::int64_t>("max_voxel_size", 40000));
-  const auto point_cloud_range =
-    this->declare_parameter<std::vector<double>>("point_cloud_range",
-    {-76.8, -76.8, -4.0, 76.8, 76.8, 6.0});
-  const auto voxel_size =
-    this->declare_parameter<std::vector<double>>("voxel_size", {0.32, 0.32, 10.0});
+    static_cast<std::size_t>(this->declare_parameter<std::int64_t>("max_voxel_size"));
+  const auto point_cloud_range = this->declare_parameter<std::vector<double>>("point_cloud_range");
+  const auto voxel_size = this->declare_parameter<std::vector<double>>("voxel_size");
   const std::size_t downsample_factor =
-    static_cast<std::size_t>(this->declare_parameter<std::int64_t>("downsample_factor", 1));
+    static_cast<std::size_t>(this->declare_parameter<std::int64_t>("downsample_factor"));
   const std::size_t encoder_in_feature_size =
-    static_cast<std::size_t>(this->declare_parameter<std::int64_t>("encoder_in_feature_size", 9));
-    const auto allow_remapping_by_area_matrix =
-    this->declare_parameter<std::vector<int64_t>>("allow_remapping_by_area_matrix", 
-      {0, 0, 0, 0, 0, 0, 0, 0, 
-       0, 0, 1, 0, 1, 0, 0, 0, 
-       0, 0, 0, 0, 1, 0, 0, 0, 
-       0, 0, 0, 0, 1, 0, 0, 0, 
-       0, 0, 0, 0, 0, 0, 0, 0, 
-       0, 0, 0, 0, 0, 0, 0, 0, 
-       0, 0, 0, 0, 0, 0, 0, 0, 
-       0, 0, 0, 0, 0, 0, 0, 0});
-
-  const auto min_area_matrix =
-    this->declare_parameter<std::vector<double>>("min_area_matrix", 
-      {0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 
-       0.000, 0.000, 12.100, 0.000, 36.000, 0.000, 0.000, 0.000, 
-       0.000, 0.000, 0.000, 0.000, 36.000, 0.000, 0.000, 0.000, 
-       0.000, 0.000, 0.000, 0.000, 36.000, 0.000, 0.000, 0.000, 
-       0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 
-       0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 
-       0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 
-       0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000});
-
-  const auto max_area_matrix =
-    this->declare_parameter<std::vector<double>>("max_area_matrix", 
-      {0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 
-       0.000, 0.000, 36.000, 0.000, std::numeric_limits<double>::infinity(), 0.000, 0.000, 0.000, 
-       0.000, 0.000, 0.000, 0.000, std::numeric_limits<double>::infinity(), 0.000, 0.000, 0.000, 
-       0.000, 0.000, 0.000, 0.000, std::numeric_limits<double>::infinity(), 0.000, 0.000, 0.000, 
-       0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 
-       0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 
-       0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 
-       0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000});
-
+    static_cast<std::size_t>(this->declare_parameter<std::int64_t>("encoder_in_feature_size"));
+  const auto allow_remapping_by_area_matrix =
+    this->declare_parameter<std::vector<int64_t>>("allow_remapping_by_area_matrix");
+  const auto min_area_matrix = this->declare_parameter<std::vector<double>>("min_area_matrix");
+  const auto max_area_matrix = this->declare_parameter<std::vector<double>>("max_area_matrix");
 
   detection_class_remapper_.setParameters(
     allow_remapping_by_area_matrix, min_area_matrix, max_area_matrix);
@@ -112,9 +78,9 @@ LidarCenterPointNode::LidarCenterPointNode(const rclcpp::NodeOptions & node_opti
     NMSParams p;
     p.nms_type_ = NMS_TYPE::IoU_BEV;
     p.target_class_names_ =
-      this->declare_parameter<std::vector<std::string>>("iou_nms_target_class_names", {"CAR"});
-    p.search_distance_2d_ = this->declare_parameter<double>("iou_nms_search_distance_2d", 10.0);
-    p.iou_threshold_ = this->declare_parameter<double>("iou_nms_threshold", 0.1);
+      this->declare_parameter<std::vector<std::string>>("iou_nms_target_class_names");
+    p.search_distance_2d_ = this->declare_parameter<double>("iou_nms_search_distance_2d");
+    p.iou_threshold_ = this->declare_parameter<double>("iou_nms_threshold");
     iou_bev_nms_.setParameters(p);
   }
 
