@@ -14,6 +14,10 @@ ENV:
   
 - Unreal_Engine: 4.26
 
+- op_bridge: ros2
+- op_agent: ros2
+- scenario_runner: openplanner_carla_bridge 
+
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 ## h2_i/humble
@@ -28,3 +32,7 @@ ENV:
   -> If you want to modify or create CARLA maps, you need Source Code CARLA \ That File Download https://github.com/carla-simulator/carla/releases/tag/0.9.13 or SSD 
   
 - Unreal_Engine: 4.26
+
+- op_bridge: ros2-humble
+- op_agent: ros2-humble
+- scenario_runner: openplanner_carla_bridge
