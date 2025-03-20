@@ -18,6 +18,7 @@
         <param from="$(find-pkg-share ublox_gps)/c94_f9p_rover.yaml"/>
       </node>
     </group> -->
+
     <!-- HH_250319 -->
     <!-- Septentrio GNSS Driver -->
     <!-- <group if="$(eval &quot;'$(var launch_driver)' and '$(var gnss_receiver)'=='septentrio'&quot;)">
