@@ -32,6 +32,6 @@ export FREE_AGENT_POSE=""
 
 source /opt/ros/humble/setup.bash 
 source ${AUTOWARE_ROOT}/install/setup.bash
-#ros2 run rviz2 rviz2 -d ${OP_AGENT_ROOT}/rviz/carla_autoware.rviz -s ${OP_AGENT_ROOT}/rviz/image/autoware.png & 
+ros2 run rviz2 rviz2 -d ${OP_AGENT_ROOT}/rviz/carla_autoware.rviz -s ${OP_AGENT_ROOT}/rviz/image/autoware.png & 
 python3 ${OP_BRIDGE_ROOT}/op_bridge/op_bridge_ros2.py
 
