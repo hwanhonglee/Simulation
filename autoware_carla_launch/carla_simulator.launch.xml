@@ -32,7 +32,7 @@
   <arg name="launch_dummy_diag_publisher" default="false" description="launch dummy diag publisher"/>
   
   <!-- Tools -->
-  <arg name="rviz" default="false" description="launch rviz"/>
+  <arg name="rviz" default="true" description="launch rviz"/>
   <arg name="rviz_config" default="$(find-pkg-share autoware_launch)/rviz/autoware.rviz" description="rviz config"/>
 
 
@@ -40,9 +40,9 @@
 	  <node pkg="carla_pointcloud" exec="carla_pointcloud_node" name="carla_pointcloud_interface" output="screen"/>
   </group>
 
-  <group>
+  <!-- <group>
 	  <node pkg="op_fix2pose" exec="op_fix2pose_node" name="op_fix2pose_interface" output="screen"/>
-  </group> 
+  </group> -->  
 
   <group scoped="false">
     <include file="$(find-pkg-share autoware_launch)/launch/autoware.launch.xml">
@@ -72,7 +72,7 @@
       <arg name="launch_system_monitor" value="$(var launch_system_monitor)"/>
       <arg name="launch_dummy_diag_publisher" value="$(var launch_dummy_diag_publisher)"/>
       <!-- Sensing -->
-      <arg name="launch_sensing_driver" value="false"/>
+      <arg name="launch_sensing_driver" value="true"/>
       <!-- Perception-->
       <arg name="traffic_light_recognition/enable_fine_detection" value="false"/>
       <arg name="namespace1" value="$(var traffic_light_namespace)"/>
