@@ -23,6 +23,14 @@ repositories:
     type: git
     url: https://github.com/autowarefoundation/autoware.universe.git
     version: e337576f8a22a015df9a21f21e4beb12bbdae2b7
+  universe/external/open_planner:
+    type: git
+    url: https://github.com/ZATiTech/open_planner.git
+    version: humble
+  universe/external/awf_velodyne:
+    type: git
+    url: https://github.com/autowarefoundation/awf_velodyne.git
+    version: awf/main  
   universe/external/tier4_ad_api_adaptor:
     type: git
     url: https://github.com/tier4/tier4_ad_api_adaptor.git
