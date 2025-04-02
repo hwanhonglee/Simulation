@@ -8,7 +8,7 @@ launch:
       default: "true"
   - arg:
       name: launch_dynamic_obstacle_avoidance
-      default: "false"
+      default: "true" # HH_250401
   - arg:
       name: launch_sampling_planner_module
       default: "false" # Warning, experimental module, use only in simulations
@@ -73,7 +73,7 @@ launch:
       default: "true"
   - arg:
       name: launch_speed_bump_module
-      default: "false"
+      default: "true" # HH_250401
   - arg:
       name: launch_no_drivable_lane_module
       default: "false"

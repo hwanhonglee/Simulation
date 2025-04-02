@@ -16,6 +16,7 @@
 #define MISSION_PLANNER__SERVICE_UTILS_HPP_
 
 #include <autoware_common_msgs/msg/response_status.hpp>
+#include <functional> // HH_250321
 
 #include <stdexcept>
 #include <string>

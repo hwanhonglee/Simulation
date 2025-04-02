@@ -20,6 +20,7 @@
 #include <geometry_msgs/msg/pose_with_covariance_stamped.hpp>
 #include <sensor_msgs/msg/image.hpp>
 #include <sensor_msgs/msg/point_cloud2.hpp>
+#include <functional> // HH_250321
 
 #include <memory>
 #include <optional>
