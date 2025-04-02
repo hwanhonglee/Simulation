@@ -228,21 +228,19 @@ class Ros2Agent(AutonomousAgent):
 
         cmd = carla.VehicleControl()  
         cmd.steer = (-data.lateral.steering_tire_angle / self.max_steer_angle)*self.steering_factor
-        speed_diff = data.longitudinal.velocity - self.speed # HH_2503 
+        speed_diff = data.longitudinal.speed - self.speed 
         if speed_diff > 0:            
             cmd.throttle = 0.75           
             cmd.brake = 0.0   
         elif speed_diff < 0.0:
             cmd.throttle = 0.0
-            if data.longitudinal.velocity <= 0.0 : # HH_250331                
+            if data.longitudinal.speed <= 0.0 :                
                 cmd.brake = 0.75  
             elif  speed_diff > -1:
-                cmd.throttle = 0.0 # HH_250331
                 cmd.brake = 0.0
             else :
-                cmd.throttle = 0.0 # HH_250331
-                cmd.brake = 0.04 # HH_250331
-
+                cmd.brake = 0.01
+        
         self.current_control = cmd
         self.step_mode_possible = True
 
@@ -496,7 +494,6 @@ class Ros2Agent(AutonomousAgent):
         self.speed = data['speed']
         twist_msg = TwistWithCovariance()        
         twist_msg.twist.linear.x = data['speed']        
-             
         if twist_msg.twist.linear.x < 0.0:
             twist_msg.twist.linear.x = 0.0
         twist_msg.twist.angular.z = -self.current_control.steer
@@ -510,7 +507,7 @@ class Ros2Agent(AutonomousAgent):
         vel_rep = VelocityReport()
         vel_rep.header = self.get_header()
         vel_rep.header.frame_id = "base_link"
-        vel_rep.longitudinal_velocity = data['speed']                   
+        vel_rep.longitudinal_velocity = data['speed'];                                 
         vel_rep.heading_rate = 0.0
         self.auto_velocity_status_publisher.publish(vel_rep)
 
