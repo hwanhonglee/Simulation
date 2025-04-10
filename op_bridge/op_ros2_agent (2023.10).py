@@ -38,17 +38,9 @@ from std_msgs.msg import Header, String
 from srunner.scenariomanager.carla_data_provider import *
 from leaderboard.autoagents.autonomous_agent import AutonomousAgent, Track
 from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSHistoryPolicy
+from autoware_auto_vehicle_msgs.msg import ControlModeReport, GearReport, SteeringReport, TurnIndicatorsReport, HazardLightsReport, VelocityReport
+from autoware_auto_control_msgs.msg import AckermannControlCommand
 
-# HH_250324
-from autoware_vehicle_msgs.msg import ControlModeReport, GearReport, SteeringReport, TurnIndicatorsReport, HazardLightsReport, VelocityReport
-from autoware_control_msgs.msg import Control
-
-## HH_250407
-qos_profile = QoSProfile(
-    reliability=QoSReliabilityPolicy.RELIABLE,
-    history=QoSHistoryPolicy.KEEP_LAST,
-    depth=10
-)
 
 def get_entry_point():
     return 'Ros2Agent'
@@ -159,7 +151,7 @@ class Ros2Agent(AutonomousAgent):
             TwistStamped, '/carla_op_controller_cmd', self.on_vehicle_control, 1)
         
         self.autoware_universe_vehicle_control_subscriber = self.ros2_node.create_subscription(
-            Control, 'control/command/control_cmd', self.on_autoware_universe_vehicle_control,
+            AckermannControlCommand, 'control/command/control_cmd', self.on_autoware_universe_vehicle_control,
             qos_profile=QoSProfile(depth=1))
 
         self.current_control = carla.VehicleControl()
@@ -175,12 +167,8 @@ class Ros2Agent(AutonomousAgent):
                 self.publisher_map[sensor['id'] + '_info'] = self.ros2_node.create_publisher(
                     CameraInfo, "/sensing/camera/traffic_light/camera_info", 1)
             elif sensor['type'] == 'sensor.lidar.ray_cast':
-                #self.sensing_cloud_publisher = self.ros2_node.create_publisher(
-                #    PointCloud2, '/carla_pointcloud', 10)
-                # HH_250407
                 self.sensing_cloud_publisher = self.ros2_node.create_publisher(
-                    PointCloud2, '/carla_pointcloud', qos_profile)
-    
+                    PointCloud2, '/carla_pointcloud', 10)
             elif sensor['type'] == 'sensor.other.gnss':
                 self.publisher_map[sensor['id']] = self.ros2_node.create_publisher(
                     NavSatFix,  "/carla_nav_sat_fix", 1)
@@ -238,19 +226,21 @@ class Ros2Agent(AutonomousAgent):
 
         cmd = carla.VehicleControl()  
         cmd.steer = (-data.lateral.steering_tire_angle / self.max_steer_angle)*self.steering_factor
-        speed_diff = data.longitudinal.velocity - self.speed # HH_250331
-        if speed_diff > 0.05: # HH_250410 # 현재 속도가 이전 속도보다 빠른 경우 -> 가속
+        speed_diff = data.longitudinal.speed - self.speed 
+        if speed_diff > 0:            
             cmd.throttle = 0.75           
             cmd.brake = 0.0   
-        elif speed_diff < 0.05: # HH_250410 # 현재 속도가 이전 속도보다 느린 경우 -> 감속
+        elif speed_diff < 0.0:
             cmd.throttle = 0.0
-            if data.longitudinal.velocity <= 0.0 : # HH_250331 # 현재 속도가 이전 속도보다 느린데, 현재 속도가 0.0 이하 -> 정지      
+            if data.longitudinal.speed <= 0.0 :                
                 cmd.brake = 0.75  
-            elif  speed_diff > -1: # 현재 속도가 1.0 이상 -> 주행 
+            elif  speed_diff > -1:
+                cmd.throttle = 0.0 # HH_250401
                 cmd.brake = 0.0
             else :
-                cmd.brake = 0.01 # HH_250331
-
+                cmd.throttle = -0.02 # HH_250401
+                cmd.brake = 0.5 # HH_250401
+        
         self.current_control = cmd
         self.step_mode_possible = True
 
@@ -320,7 +310,7 @@ class Ros2Agent(AutonomousAgent):
     def sensors(self):
         sensors = [{'type': 'sensor.camera.rgb', 'x': 0.7, 'y': 0.0, 'z': 1.6, 'roll': 0.0, 'pitch': 0.0, 'yaw': 0.0,
             'width': 1280, 'height': 720, 'fov': 100, 'id': 'Center'},
-            {'type': 'sensor.lidar.ray_cast', 'x': 0.0, 'y': 0.0, 'z': 2.5, 'roll': 0.0, 'pitch': 0.0,
+            {'type': 'sensor.lidar.ray_cast', 'x': 0.0, 'y': 0.0, 'z': 2.6, 'roll': 0.0, 'pitch': 0.0,
              'yaw': -90.0, 'id': 'LIDAR'},
             {'type': 'sensor.other.gnss', 'x': 0.0, 'y': 0.0, 'z': 1.6, 'id': 'GPS'},
             {'type': 'sensor.opendrive_map', 'reading_frequency': 1, 'id': 'OpenDRIVE'},
@@ -340,80 +330,35 @@ class Ros2Agent(AutonomousAgent):
         header.stamp = Time(sec=seconds, nanosec=nanoseconds)            
         return header
 
-    # HH_250331
     def publish_lidar(self, sensor_id, data):
         """
-        Function to publish lidar data in PointXYZIRCAEDT format (Autoware-compatible)
+        Function to publish lidar data
         """
-        if self.checkFrequecy(self.lidar_publish_prev_time, self.lidar_freq):
+        if self.checkFrequecy(self.lidar_publish_prev_time, self.lidar_freq) == True:
             return
-
+        
         self.lidar_publish_prev_time = datetime.datetime.now()
 
         header = self.get_header()
-        lidar_data = numpy.frombuffer(data, dtype=numpy.float32)
+        lidar_data = numpy.frombuffer(data, dtype=numpy.float32)        
 
-        if lidar_data.shape[0] % 4 != 0:
-            print('Cannot reshape LIDAR data buffer')
-            return
-
-        # x, y, z, intensity reshape
-        lidar_data = numpy.reshape(lidar_data, (-1, 4))
-        lidar_data = lidar_data[..., [1, 0, 2, 3]]  # swap to x, y, z, intensity
-
-        num_points = lidar_data.shape[0]
-
-        # create dummy values 
-        channel = numpy.zeros((num_points,), dtype=numpy.uint16)       # 'channel' = ring
-        azimuth = numpy.zeros((num_points,), dtype=numpy.float32)
-        elevation = numpy.zeros((num_points,), dtype=numpy.float32)    # required
-        distance = numpy.linalg.norm(lidar_data[:, :3], axis=1).astype(numpy.float32)
-        return_type = numpy.zeros((num_points,), dtype=numpy.uint8)
-        intensity = (lidar_data[:, 3] * 255).astype(numpy.uint8)  # float32 → uint8 scaling
-        time_stamp = numpy.zeros((num_points,), dtype=numpy.uint32)    # required
-
-        # Autoware-compatible dtype
-        structured_dtype = numpy.dtype([
-            ('x', 'f4'),
-            ('y', 'f4'),
-            ('z', 'f4'),
-            ('intensity', 'u1'),
-            ('return_type', 'u1'),
-            ('channel', 'u2'),
-            ('azimuth', 'f4'),
-            ('elevation', 'f4'),
-            ('distance', 'f4'),
-            ('time_stamp', 'u4')
-        ], align=False)
-
-        structured_array = numpy.zeros(num_points, dtype=structured_dtype)
-        structured_array['x'] = lidar_data[:, 0]
-        structured_array['y'] = lidar_data[:, 1]
-        structured_array['z'] = lidar_data[:, 2]
-        structured_array['intensity'] = intensity
-        structured_array['return_type'] = return_type
-        structured_array['channel'] = channel
-        structured_array['azimuth'] = azimuth
-        structured_array['elevation'] = elevation
-        structured_array['distance'] = distance
-        structured_array['time_stamp'] = time_stamp
-
-        fields = [
-            PointField(name='x', offset=0, datatype=PointField.FLOAT32, count=1),
-            PointField(name='y', offset=4, datatype=PointField.FLOAT32, count=1),
-            PointField(name='z', offset=8, datatype=PointField.FLOAT32, count=1),
-            PointField(name='intensity', offset=12, datatype=PointField.UINT8, count=1),
-            PointField(name='return_type', offset=13, datatype=PointField.UINT8, count=1),
-            PointField(name='channel', offset=14, datatype=PointField.UINT16, count=1),
-            PointField(name='azimuth', offset=16, datatype=PointField.FLOAT32, count=1),
-            PointField(name='elevation', offset=20, datatype=PointField.FLOAT32, count=1),
-            PointField(name='distance', offset=24, datatype=PointField.FLOAT32, count=1),
-            PointField(name='time_stamp', offset=28, datatype=PointField.UINT32, count=1)
-        ]
-
-        header.frame_id = 'velodyne_top'
-        msg = create_cloud(header, fields, structured_array)
-        self.sensing_cloud_publisher.publish(msg)
+        if lidar_data.shape[0] % 4 == 0:
+            lidar_data = numpy.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
+            lidar_data = lidar_data[..., [1, 0, 2, 3]]
+            fields = [PointField(name='x', offset=0,
+                         datatype=PointField.FLOAT32, count=1),
+                        PointField(name='y', offset=4,
+                         datatype=PointField.FLOAT32, count=1),
+                        PointField(name='z', offset=8,
+                         datatype=PointField.FLOAT32, count=1),
+                        PointField(name='intensity', offset=12,
+                         datatype=PointField.FLOAT32, count=1)]
+            
+            header.frame_id = 'velodyne_top'
+            msg = create_cloud(header,fields, lidar_data)
+            self.sensing_cloud_publisher.publish(msg)   
+        else:
+            print('Cannot Reshape LIDAR Data buffer')
 
     def publish_gnss(self, sensor_id, data):
         """
@@ -504,9 +449,8 @@ class Ros2Agent(AutonomousAgent):
         self.speed = data['speed']
         twist_msg = TwistWithCovariance()        
         twist_msg.twist.linear.x = data['speed']        
-             
-        if twist_msg.twist.linear.x < 0.0:
-            twist_msg.twist.linear.x = 0.0
+        if twist_msg.twist.linear.x <= 0.0: # HH_250401
+            twist_msg.twist.linear.x = -0.5 # HH_250401
         twist_msg.twist.angular.z = -self.current_control.steer
         twist_msg.twist.linear.z = 1.0 # to tell OpenPlanner to use the steer directly
         twist_msg.twist.angular.x = 1.0 # to tell OpenPlanner to use the steer directly 
@@ -518,7 +462,7 @@ class Ros2Agent(AutonomousAgent):
         vel_rep = VelocityReport()
         vel_rep.header = self.get_header()
         vel_rep.header.frame_id = "base_link"
-        vel_rep.longitudinal_velocity = data['speed']                   
+        vel_rep.longitudinal_velocity = data['speed'];                                 
         vel_rep.heading_rate = 0.0
         self.auto_velocity_status_publisher.publish(vel_rep)
 
