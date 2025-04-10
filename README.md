@@ -46,8 +46,8 @@ ENV:
 ENV:
 - Ubuntu 22.04
 - ROS2: Humble
-- Nvidia Driver Version: 570.86.16
-- Cuda compiler driver: release 11.6, V11.6.55
+- Nvidia Driver Version: 570.124.06
+- Cuda compiler driver: release 12.3, V12.3.107
 
 - Autoware Universe: humble
 - CARLA Simulator: 0.9.15
