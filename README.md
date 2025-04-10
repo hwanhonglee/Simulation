@@ -40,8 +40,8 @@ ENV:
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 ## h2_i/humble/<pkg_name>/humble/v1.x --> (autoware universe b: humble)
-# convert branch: 2023.10 -> humble 
-  # sudo apt install ros-humble-generate-parameter-library 
+ convert branch: 2023.10 -> humble 
+  - sudo apt install ros-humble-generate-parameter-library 
   
 ENV:
 - Ubuntu 22.04
