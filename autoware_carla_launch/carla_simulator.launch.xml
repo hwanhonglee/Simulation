@@ -32,9 +32,8 @@
   <arg name="launch_dummy_diag_publisher" default="false" description="launch dummy diag publisher"/>
   
   <!-- Tools -->
-  <arg name="rviz" default="true" description="launch rviz"/>
+  <arg name="rviz" default="true" description="launch rviz"/> <!-- HH_250324 -->
   <arg name="rviz_config" default="$(find-pkg-share autoware_launch)/rviz/autoware.rviz" description="rviz config"/>
-
 
   <group>
 	  <node pkg="carla_pointcloud" exec="carla_pointcloud_node" name="carla_pointcloud_interface" output="screen"/>
